@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: JPADemo
+  datasource:
+    url: jdbc:postgresql://localhost:5432/data_jp
+    username: postgres
+    password: bruhmomentum
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      # Controls how Spring interacts with the DB on startup
+      # Since our demo, we just recreate db each time
+      ddl-auto: create-drop
+    database: postgresql
+    show-sql: true
+
+  output:
+    ansi:
+      enabled: ALWAYS
