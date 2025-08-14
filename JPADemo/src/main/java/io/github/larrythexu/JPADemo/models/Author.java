@@ -8,6 +8,8 @@ import java.time.LocalDateTime;
 
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 public class Author {
 
@@ -29,14 +31,14 @@ public class Author {
   private String email;
   private int age;
 
-  @Column(
-      updatable = false,
-      nullable = false
-  )
-  private LocalDateTime createdAt;
-
-  @Column(
-      insertable = false // We don't want JPA to be inserting this value, it should be handled by the DB
-  )
-  private LocalDateTime lastModifiedAt;
+//  @Column(
+//      updatable = false,
+//      nullable = false
+//  )
+//  private LocalDateTime createdAt;
+//
+//  @Column(
+//      insertable = false // We don't want JPA to be inserting this value, it should be handled by the DB
+//  )
+//  private LocalDateTime lastModifiedAt;
 }
