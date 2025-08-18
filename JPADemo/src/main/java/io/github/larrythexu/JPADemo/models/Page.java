@@ -1,8 +1,6 @@
 package io.github.larrythexu.JPADemo.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -21,4 +19,13 @@ public class Page {
 
   private int pageNumber;
   private String firstWord;
+
+  @ManyToOne
+  @JoinColumn(name = "chapter_id")
+  private Chapter chapter;
+
+  // For demo purposes, we assume pages only have 1 footnote
+  @OneToOne
+  @JoinColumn(name = "footnote_id")
+  private Footnote footnote;
 }

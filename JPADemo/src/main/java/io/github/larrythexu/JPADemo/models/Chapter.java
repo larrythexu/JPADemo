@@ -1,12 +1,12 @@
 package io.github.larrythexu.JPADemo.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -20,5 +20,13 @@ public class Chapter {
   private Integer id;
 
   private String name;
-  private int order;
+  private int chapterOrder;
+
+  @ManyToOne
+  @JoinColumn(name = "book_id")
+  private Book book;
+
+  @OneToMany(mappedBy = "chapter")
+  private List<Page> pages;
+
 }
