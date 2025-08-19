@@ -3,20 +3,18 @@ package io.github.larrythexu.JPADemo.models;
 
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+@SuperBuilder
 @Entity
-public class Author {
-
-  @Id // Set primary key
-  @GeneratedValue
-  private Integer id; // use Integer because it can be null, for hibernate to autogen ids
+public class Author extends BaseEntity {
 
   @Column(
       name = "f_name", // the name of the column in the DB

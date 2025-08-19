@@ -1,21 +1,17 @@
 package io.github.larrythexu.JPADemo.models;
 
+import io.github.larrythexu.JPADemo.models.Footnotes.Footnote;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
+@SuperBuilder
 @Entity
-public class Page {
-
-  @Id
-  @GeneratedValue
-  private Integer id;
+public class Page extends BaseEntity {
 
   private int pageNumber;
   private String firstWord;

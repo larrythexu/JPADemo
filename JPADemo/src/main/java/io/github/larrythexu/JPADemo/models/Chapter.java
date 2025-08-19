@@ -1,23 +1,18 @@
 package io.github.larrythexu.JPADemo.models;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import java.util.List;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
+@SuperBuilder
 @Entity
-public class Chapter {
-
-  @Id
-  @GeneratedValue
-  private Integer id;
+public class Chapter extends BaseEntity {
 
   private String name;
   private int chapterOrder;
