@@ -1,4 +1,4 @@
-package io.github.larrythexu.JPADemo.models.Footnotes;
+package io.github.larrythexu.JPADemo.models.footnotes;
 
 import io.github.larrythexu.JPADemo.models.BaseEntity;
 import io.github.larrythexu.JPADemo.models.Page;
@@ -16,8 +16,11 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @SuperBuilder
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "footnote_type")
+// SINGLE-TABLE
+//@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+//@DiscriminatorColumn(name = "footnote_type")
+// JOINED-TABLE
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Footnote extends BaseEntity {
 
   private int footnoteNumber;

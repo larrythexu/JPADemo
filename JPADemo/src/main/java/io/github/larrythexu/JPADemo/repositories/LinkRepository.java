@@ -1,6 +1,6 @@
 package io.github.larrythexu.JPADemo.repositories;
 
-import io.github.larrythexu.JPADemo.models.Footnotes.Link;
+import io.github.larrythexu.JPADemo.models.footnotes.Link;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 // Link Footnote repo for testing

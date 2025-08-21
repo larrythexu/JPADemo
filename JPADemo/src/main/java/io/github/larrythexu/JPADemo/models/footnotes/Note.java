@@ -1,6 +1,5 @@
-package io.github.larrythexu.JPADemo.models.Footnotes;
+package io.github.larrythexu.JPADemo.models.footnotes;
 
-import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,7 +13,7 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @SuperBuilder
 @Entity
-@DiscriminatorValue("N")
+//@DiscriminatorValue("N")
 public class Note extends Footnote {
 
   private String noteInfo;

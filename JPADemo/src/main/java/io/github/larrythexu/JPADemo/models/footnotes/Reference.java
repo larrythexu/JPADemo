@@ -1,6 +1,5 @@
-package io.github.larrythexu.JPADemo.models.Footnotes;
+package io.github.larrythexu.JPADemo.models.footnotes;
 
-import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,8 +13,8 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @SuperBuilder
 @Entity
-@DiscriminatorValue("L")
-public class Link extends Footnote {
+//@DiscriminatorValue("R")
+public class Reference extends Footnote {
 
-  private String URL;
+  private String citation;
 }

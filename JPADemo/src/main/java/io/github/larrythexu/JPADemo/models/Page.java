@@ -1,6 +1,6 @@
 package io.github.larrythexu.JPADemo.models;
 
-import io.github.larrythexu.JPADemo.models.Footnotes.Footnote;
+import io.github.larrythexu.JPADemo.models.footnotes.Footnote;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
