@@ -52,6 +52,10 @@ public class JpaDemoApplication {
 			// update Author a set a.age = 22 where a.id = 1
 			authorRepository.updateAuthor(28, 1);
 
+			authorRepository.findByNamedQuery(55).forEach(a -> {
+				System.out.println(a.getLastName() + " " + a.getAge());
+			});
+
 //			var link = Link.builder()
 //					.URL("test.com")
 //					.footnoteNumber(5)

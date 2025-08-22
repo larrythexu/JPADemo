@@ -5,10 +5,16 @@ import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
 public interface AuthorRepository extends JpaRepository<Author, Integer> {
+  // Named Queries
+  @Transactional
+  List<Author> findByNamedQuery(@Param("age") int age);
+
+  // Dynamic Queries
   // We can concatenate different filters in the methods
   // select * from author where f_name = 'x'
   List<Author> findAllByFirstName(String firstName);
