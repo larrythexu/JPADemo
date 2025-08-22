@@ -3,13 +3,14 @@ package io.github.larrythexu.JPADemo.repositories;
 import io.github.larrythexu.JPADemo.models.Author;
 import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
-public interface AuthorRepository extends JpaRepository<Author, Integer> {
+public interface AuthorRepository extends JpaRepository<Author, Integer>, JpaSpecificationExecutor<Author> {
   // Named Queries
   @Transactional
   List<Author> findByNamedQuery(@Param("age") int age);

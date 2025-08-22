@@ -4,11 +4,13 @@ import com.github.javafaker.Faker;
 import io.github.larrythexu.JPADemo.models.Author;
 import io.github.larrythexu.JPADemo.repositories.AuthorRepository;
 import io.github.larrythexu.JPADemo.repositories.LinkRepository;
+import io.github.larrythexu.JPADemo.specifications.AuthorSpecification;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.data.jpa.domain.Specification;
 
 import java.util.List;
 
@@ -54,6 +56,14 @@ public class JpaDemoApplication {
 
 			authorRepository.findByNamedQuery(55).forEach(a -> {
 				System.out.println(a.getLastName() + " " + a.getAge());
+			});
+
+			// Using Specifications
+			Specification<Author> spec = Specification.anyOf(
+					AuthorSpecification.hasAge(25),
+					AuthorSpecification.firstNameLike("La"));
+			authorRepository.findAll(spec).forEach(a -> {
+				System.out.println(a.getFirstName() + ": " + a.getEmail() + ", " + a.getAge());
 			});
 
 //			var link = Link.builder()
